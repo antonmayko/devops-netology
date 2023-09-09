@@ -26,7 +26,7 @@
 ## Задача 2
 
 
-### Чем Ansible выгодно отличается от других систем управление конфигурациями?
+### Чем Ansible выгодно отличается от других систем управления конфигурациями?
 
 - нет необходимости установки агентов на целевых хостах.
 
@@ -97,11 +97,11 @@ ansible [core 2.15.2]
 
 Прошу в домашних заданиях такие моменты уточнять хотя бы словами (без команд). Спасибо).
 
-![alt-1](https://github.com/antonmayko/devops-netology/tree/main/virt/virt-02-iaac/images/vagrant_status.png "vagrant_status")
+![alt-1](https://github.com/antonmayko/devops-netology/blob/main/virt/virt-02-iaac/images/vagrant_status.png "vagrant_status")
 
-![alt-1](https://github.com/antonmayko/devops-netology/tree/main/virt/virt-02-iaac/images/vagrant_provision.png "vagrant_provision")
+![alt-1](https://github.com/antonmayko/devops-netology/blob/main/virt/virt-02-iaac/images/vagrant_provision.png "vagrant_provision")
 
-![alt-1](https://github.com/antonmayko/devops-netology/tree/main/virt/virt-02-iaac/images/docker_version.png "docker_version")
+![alt-1](https://github.com/antonmayko/devops-netology/blob/main/virt/virt-02-iaac/images/docker_version.png "docker_version")
 
 
 
