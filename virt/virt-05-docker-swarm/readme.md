@@ -45,4 +45,3 @@
 Это некий аналог мастер-пароля для кластера.
 
 
-![alt-1](https://github.com/antonmayko/devops-netology/blob/main/virt/virt-04-docker-compose/assets/node02_2.png "node02_2")
