@@ -103,7 +103,7 @@ If this is false, it will delete the image from the docker local storage on dest
 
 Параметр `keep_locally = true` говорит терраформу не удалять Docker-образ при выполнении операции уничтожения ресурса.
 
-Поэтому образ удаленне был.
+Поэтому образ удален не был.
 
 
 ## Задание 2
