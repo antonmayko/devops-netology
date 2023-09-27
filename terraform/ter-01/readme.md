@@ -98,11 +98,12 @@ terraform.tfstate
 - Объясните, почему при этом не был удалён docker-образ nginx:latest. 
 Ответ обязательно подкрепите строчкой из документации terraform провайдера docker.
 
-force_remove (Boolean) If true, then the image is removed forcibly when the resource is destroyed.
+keep_locally (Boolean) If true, then the Docker image won't be deleted on destroy operation. 
+If this is false, it will delete the image from the docker local storage on destroy operation.
 
-Параметр `force_remove` необязательный, поэтому не был указан.
+Параметр `keep_locally = true` говорит терраформу не удалять Docker-образ при выполнении операции уничтожения ресурса.
 
-Только при `force_remove = yes` будет удален docker-образ при удалении ресурса.
+Поэтому образ удаленне был.
 
 
 ## Задание 2
