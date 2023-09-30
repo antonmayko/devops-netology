@@ -54,9 +54,9 @@ provider "yandex" {
 - `core_fraction = 5` - это уровень доступности к физическим ядрам CPU. В данном примере как минимум 5% времени в течении каждой секунды. Этот параметр 
 удешевляет стоимость созданного ресурса, и для обучения этого вполне достаточно.
 
-![alt-1](https://github.com/antonmayko/devops-netology/blob/main/terraform/ter-02/assets/yc_vm.png "yc_vm")
+![alt-1](https://github.com/antonmayko/devops-netology/blob/terraform-02/terraform/ter-02/assets/yc_vm.png "yc_vm")
 
-![alt-1](https://github.com/antonmayko/devops-netology/blob/main/terraform/ter-02/assets/ssh_connect.png "ssh_connect")
+![alt-1](https://github.com/antonmayko/devops-netology/blob/terraform-02/terraform/ter-02/assets/ssh_connect.png "ssh_connect")
 
 
 ## Задание 2
@@ -66,19 +66,19 @@ provider "yandex" {
 
 ## Задание 3
 
-![alt-1](https://github.com/antonmayko/devops-netology/blob/main/terraform/ter-02/assets/yc_vm_two.png "yc_vm_two")
+![alt-1](https://github.com/antonmayko/devops-netology/blob/terraform-02/terraform/ter-02/assets/yc_vm_two.png "yc_vm_two")
 
 
 ## Задание 4
 
-![alt-1](https://github.com/antonmayko/devops-netology/blob/main/terraform/ter-02/assets/ter_vm_ext_ips.png "ter_vm_ext_ips")
+![alt-1](https://github.com/antonmayko/devops-netology/blob/terraform-02/terraform/ter-02/assets/ter_vm_ext_ips.png "ter_vm_ext_ips")
 
-![alt-1](https://github.com/antonmayko/devops-netology/blob/main/terraform/ter-02/assets/yc_vm_ext_ips.png "yc_vm_ext_ips")
+![alt-1](https://github.com/antonmayko/devops-netology/blob/terraform-02/terraform/ter-02/assets/yc_vm_ext_ips.png "yc_vm_ext_ips")
 
 
 ## Задание 5
 
-![alt-1](https://github.com/antonmayko/devops-netology/blob/main/terraform/ter-02/assets/yc_vm_names_locals.png "yc_vm_names_locals")
+![alt-1](https://github.com/antonmayko/devops-netology/blob/terraform-02/terraform/ter-02/assets/yc_vm_names_locals.png "yc_vm_names_locals")
 
 
 ## Задание 6
