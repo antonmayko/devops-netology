@@ -91,8 +91,8 @@ provider "yandex" {
 - Напишите, какой командой можно отобразить второй элемент списка test_list.
 
 ```
-> local.test_list.2
-"production"
+> local.test_list.1
+"staging"
 ```
 
 - Найдите длину списка test_list с помощью функции length(<имя переменной>).
