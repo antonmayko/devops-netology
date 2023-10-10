@@ -6,18 +6,18 @@ resource "yandex_compute_instance" "db_vms" {
     1 = "replica"
   }
   name        = var.db_resources[each.key].vm_name
-  platform_id = "standard-v2"
+  platform_id = var.vm_platform_id
 
   resources {
     cores  = var.db_resources[each.key].cpu
     memory = var.db_resources[each.key].ram
-    core_fraction = 5
+    core_fraction = var.cpu_core_fract
   }
 
   boot_disk {
     initialize_params {
       image_id = data.yandex_compute_image.ubuntu.image_id
-      type = "network-hdd"
+      type = var.hard_disk_type
       size = var.db_resources[each.key].disk
     }
   }

@@ -47,3 +47,60 @@ variable "db_resources" {
   default = [ {vm_name="main", cpu  = 4, ram  = 4, disk = 8}, {vm_name="replica", cpu  = 2, ram  = 2, disk = 6 } ]
 }
 
+variable "vm_platform_id" {
+  type        = string
+  description = "Platform ID"
+  default = "standard-v2"
+}
+
+variable "boot_disk_size" {
+  type        = number
+  description = "boot disk size"
+  default = "5"
+}
+
+variable "hard_disk_type" {
+  type        = string
+  description = "vm_hard_disk_type"
+  default     = "network-hdd"
+}
+
+variable "cpu_core_fract" {
+  type        = number
+  description = "CPU core fraction"
+  default     = "5"
+}
+
+variable "vms_res" {
+  type    = map(map(number))
+  default = {
+    web = {
+      cores         = 2,
+      memory        = 1,
+      core_fraction = 5
+    }
+    storage = {
+      cores         = 2,
+      memory        = 2,
+      core_fraction = 5
+    }
+  }
+}
+
+variable "web_wms_count" {
+  type        = number
+  description = "VM web count"
+  default = "2"
+}
+
+variable "compute_disk_count" {
+  type        = number
+  description = "compute disk  count"
+  default = "3"
+}
+
+variable "compute_disk_size" {
+  type        = number
+  description = "compute disk  size"
+  default = "1"
+}

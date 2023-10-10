@@ -1,21 +1,21 @@
 
 resource "yandex_compute_instance" "web_vms" {
   name        = "web-${count.index+1}"
-  platform_id = "standard-v2"
+  platform_id = var.vm_platform_id
 
-  count = 2
+  count = var.web_wms_count
 
   resources {
-    cores  = 2
-    memory = 1
-    core_fraction = 5
+    cores         = var.vms_res.storage.cores
+    memory        = var.vms_res.storage.memory
+    core_fraction = var.vms_res.storage.core_fraction
   }
 
   boot_disk {
     initialize_params {
       image_id = data.yandex_compute_image.ubuntu.image_id
-      type = "network-hdd"
-      size = 5
+      type = var.hard_disk_type
+      size = var.boot_disk_size
     }
   }
 
