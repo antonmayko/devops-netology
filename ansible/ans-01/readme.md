@@ -65,9 +65,9 @@
 
 ![decript](https://github.com/antonmayko/devops-netology/blob/ansible-01/ansible/ans-01/assets/decrypt1.png)
 
-2. Зашифруйте отдельное значение `PaSSw0rd` для переменной `some_fact` паролем `netology`. Добавьте полученное значение в `group_vars/all/exmp.yml`.
+2. Зашифруйте отдельное значение `PaSSw0rd` для переменной `some_fact` паролем `netology`. Добавьте полученное значение в `group_vars/all/examp.yml`.
 
-Ответ: Зашифровал и добавил в `group_vars/all/exmp.yml`
+Ответ: Зашифровал и добавил в `group_vars/all/examp.yml`
 
 ![enc-pass](https://github.com/antonmayko/devops-netology/blob/ansible-01/ansible/ans-01/assets/enc-pass.png)
 
