@@ -56,8 +56,8 @@
 В git-репозитории, в котором было выполнено задание к занятию «Работа с Playbook», создал новую ветку `ansible-02`, закоммитил 
 в эту ветку свой финальный код проекта с тегом `08-ansible-02-playbook`. Ответы на задания и необходимые скриншоты оформил в md-файле в ветке `ansible-02`.
 
-Прикрепляю ссылку на свой финальный код, расположенный в ветке ansible-01. 
+Прикрепляю ссылку на свой финальный код, расположенный в ветке ansible-02. 
 
-[Финальный код проекта](https://github.com/antonmayko/devops-netology/tree/ansible-01/ansible/ans-01/playbook)
+[Финальный код проекта](https://github.com/antonmayko/devops-netology/tree/ansible-02/ansible/ans-02/playbook)
 
 
