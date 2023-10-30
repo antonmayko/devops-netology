@@ -22,7 +22,7 @@
 
 5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
 
-Ответ: Ошибок нет, но есть не очень понятное предупреждение.
+Ответ: Ошибок нет, но есть не очень понятное предупреждение. Прошу это прокомментировать.
 
 ![lint](https://github.com/antonmayko/devops-netology/blob/ansible-02/ansible/ans-02/assets/lint.png)
 
