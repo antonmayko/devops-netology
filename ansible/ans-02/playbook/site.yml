@@ -1,0 +1,87 @@
+---
+- name: Install Clickhouse
+  hosts: clickhouse
+  handlers:
+    - name: Start clickhouse service
+      become: true
+      ansible.builtin.service:
+        name: clickhouse-server
+        state: restarted
+  tasks:
+    - block:
+        - name: Get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
+            dest: "./{{ item }}-{{ clickhouse_version }}.rpm"
+          with_items: "{{ clickhouse_packages }}"
+      rescue:
+        - name: Get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
+            dest: "./clickhouse-common-static-{{ clickhouse_version }}.rpm"
+    - name: Install clickhouse packages
+      become: true
+      ansible.builtin.yum:
+        name:
+          - clickhouse-common-static-{{ clickhouse_version }}.rpm
+          - clickhouse-client-{{ clickhouse_version }}.rpm
+          - clickhouse-server-{{ clickhouse_version }}.rpm
+      notify: Start clickhouse service
+    - name: Flush handlers
+      meta: flush_handlers
+    - name: Create database
+      ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
+      register: create_db
+      failed_when: create_db.rc != 0 and create_db.rc !=82
+      changed_when: create_db.rc == 0
+
+- name: Install Vector
+  hosts: vector
+  tasks:
+    - name: Download vector archive
+#      ansible.builtin.command: "mkdir -p vector"
+#      ansible.builtin.command: "curl -sSfL --proto '=https' --tlsv1.2 https://packages.timber.io/vector/0.33.0/vector-0.33.0-x86_64-unknown-linux-musl.tar.gz  | tar xzf - -C vector --strip-components=2"
+      ansible.builtin.get_url:
+        url: "https://packages.timber.io/vector/0.33.0/vector-0.33.0-x86_64-unknown-linux-musl.tar.gz"
+        dest: "./vector-033.tar.gz"
+    - name: Unpack vector archive
+      ansible.builtin.unarchive:
+        src: ~/vector-033.tar.gz
+        dest: ~/
+        remote_src: yes
+    - name: Copy vector binary
+      become: true
+      ansible.builtin.copy:
+        src: /home/centos/vector-x86_64-unknown-linux-musl/bin/vector
+        dest: /usr/bin
+        mode: 755
+        remote_src: yes
+    - name: Copy vector config
+      become: true
+      ansible.builtin.copy:
+        src: vector.yaml
+        dest: /etc/vector/
+        mode: 644
+        remote_src: no
+    - name: Create vector data directory
+      become: true
+      ansible.builtin.file:
+        path: /var/lib/vector
+        state: directory
+        owner: root
+        group: root
+    - name: Copy vector systemd unit
+      become: true
+      ansible.builtin.template:
+        src: vector.service
+        dest: /etc/systemd/system/vector.service
+        mode: 755
+    - name: Start vector
+      become: true
+      ansible.builtin.systemd:
+        name: vector
+        enabled: true
+        state: started
+        daemon-reload: true
+
+
