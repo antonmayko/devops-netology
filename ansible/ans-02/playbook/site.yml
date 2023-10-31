@@ -37,6 +37,12 @@
 
 - name: Install Vector
   hosts: vector
+  handlers:
+    - name: Restart vector service
+      become: true
+      ansible.builtin.service:
+        name: vector
+        state: restarted
   tasks:
     - name: Download vector archive
 #      ansible.builtin.command: "mkdir -p vector"
@@ -63,6 +69,7 @@
         dest: /etc/vector/
         mode: 644
         remote_src: no
+      notify: Restart vector service
     - name: Create vector data directory
       become: true
       ansible.builtin.file:
