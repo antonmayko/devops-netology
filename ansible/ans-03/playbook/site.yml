@@ -91,3 +91,53 @@
         state: started
         daemon-reload: true
 
+
+
+- name: Install Lighthouse
+  hosts: lighthouse
+  handlers:
+    - name: Restart httpd service
+      become: true
+      ansible.builtin.service:
+        name: httpd
+        state: started
+
+
+  tasks:
+    - name: Install httpd service and git
+      become: true
+      ansible.builtin.yum:
+        name:
+          - httpd
+          - git
+        state: present
+    - name: Clone repo lighthouse
+      ansible.builtin.git:
+        repo: https://github.com/VKCOM/lighthouse.git
+        dest: ~/lighthouse
+        single_branch: yes
+        version: master
+    - name: Copy dir to /var/www
+      become: true
+      ansible.builtin.copy:
+        src: lighthouse
+        dest: /var/www/
+        mode: 0755
+        remote_src: yes
+    - name: Copy httpd config
+      become: true
+      ansible.builtin.copy:
+        src: lighthouse.conf
+        dest: /etc/httpd/conf.d
+        mode: 0644
+        remote_src: no
+      notify: Restart httpd service
+    - name: Start httpd
+      become: true
+      ansible.builtin.systemd:
+        name: httpd
+        enabled: true
+        state: started
+        daemon-reload: true
+
+
