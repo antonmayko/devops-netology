@@ -60,7 +60,7 @@ node_load15
 Сохраните ваш Dashboard. Для этого перейдите в настройки Dashboard, выберите в боковом меню «JSON MODEL». Далее скопируйте отображаемое json-содержимое в отдельный файл и сохраните его.
 1. В качестве решения задания приведите листинг этого файла.
 
-Ответ: Листинг файла [json_model](https://github.com/antonmayko/devops-netology/blob/mon-02/mon/mon-02/assets/json_model)
+Ответ: Листинг файла [json_model](https://github.com/antonmayko/devops-netology/blob/mon-02/mon/mon-02/json_model)
 
 ---
 
