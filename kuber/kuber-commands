@@ -1,0 +1,19 @@
+Зайти в контейнер пода
+kubectl exec -it pods/multitool-test  -- bash
+kubectl exec -it pods/nginx-67984b7d96-kq47j -c multitool -- bash
+
+Просмотр логов
+kubectl logs nginx-76f558f9b-8sm2l -c multitool
+kubectl describe pod nginx-dcfcbd96b-db5qc
+
+
+kubectl get deploy
+
+
+kubectl get pods -o wide
+kubectl get po -w
+
+
+kubectl get svc
+
+
