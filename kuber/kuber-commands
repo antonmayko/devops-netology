@@ -17,3 +17,6 @@ kubectl get po -w
 kubectl get svc
 
 
+curl
+
+
