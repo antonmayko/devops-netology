@@ -20,3 +20,10 @@ kubectl get svc
 curl
 
 
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+
+helm -n ingress-nginx install ingress-nginx ingress-nginx/ingress-nginx
+
+
+kubectl run mycurlpod --image=curlimages/curl -i --tty --rm -- sh
