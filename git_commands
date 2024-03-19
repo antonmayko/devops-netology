@@ -1,4 +1,4 @@
-git checkout -b kuber-05
+git checkout -b kuber-06
 git add *
-git commit -m "Home task kuber-05 v1"
-git push --set-upstream origin kuber-05
+git commit -m "Home task kuber-06 v1"
+git push --set-upstream origin kuber-06
