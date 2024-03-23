@@ -30,6 +30,9 @@ kubectl run mycurlpod --image=curlimages/curl -i --tty --rm -- sh
 
 kubectl exec -it pods/multitool  -- bash
 
-kubectl exec -it pods/deploy1-774ffbcb86-qqlvf -c multitool -- bash
+kubectl exec -it pods/deploy2-7fcc9cd5bc-v4xv6  -c multitool -- bash
 
 kubectl exec -it set1-xvcwp -- bash
+
+
+kubectl --namespace=kube-system get pods --selector="app.kubernetes.io/instance=csi-driver-nfs" --watch

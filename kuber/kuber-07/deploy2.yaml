@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy2
+  labels:
+    app: deploy2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy2
+  template:
+    metadata:
+      labels:
+        app: deploy2
+    spec:
+      containers:
+      - name: multitool
+        image: wbitt/network-multitool
+        volumeMounts:
+          - name: vol2
+            mountPath: /test
+      volumes:
+        - name: vol2
+          persistentVolumeClaim:
+            claimName: pv-claim-nfs
+
