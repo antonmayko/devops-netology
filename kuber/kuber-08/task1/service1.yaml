@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service1
+spec:
+  selector:
+    app: deploy1
+  ports:
+    - name: nginx-service-port
+      protocol: TCP
+      port: 81
+      targetPort: 80

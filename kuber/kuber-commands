@@ -19,6 +19,10 @@ kubectl get svc
 
 curl
 
+microk8s kubectl port-forward --address 0.0.0.0 pod/podechoserver 1111:8080
+microk8s kubectl port-forward --address 0.0.0.0 svc/service1 1111:81
+
+
 
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
@@ -36,3 +40,6 @@ kubectl exec -it set1-xvcwp -- bash
 
 
 kubectl --namespace=kube-system get pods --selector="app.kubernetes.io/instance=csi-driver-nfs" --watch
+
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server-key.pem -out server.pem -subj "/CN=netology-example.com/O=netology-example.com"
+kubectl create secret tls secret-tls --key server-key.pem --cert server.pem

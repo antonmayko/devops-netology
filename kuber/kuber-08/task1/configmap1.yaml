@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: confmap1
+data:
+  multitool_port: "8080"
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+    <meta charset="UTF-8">
+    <title> Это простая страница html</title>
+    </head>
+    <body>
+    Пример простой страницы для домашнего задания по Kubernetes
+    </body>
+    </html>
