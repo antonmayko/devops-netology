@@ -43,3 +43,8 @@ kubectl --namespace=kube-system get pods --selector="app.kubernetes.io/instance=
 
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server-key.pem -out server.pem -subj "/CN=netology-example.com/O=netology-example.com"
 kubectl create secret tls secret-tls --key server-key.pem --cert server.pem
+
+
+https://microk8s.io/docs/services-and-ports
+Upon deployment MicroK8s creates a Certificate Authority, a signed server certificate and
+a service account key file. These files are stored under /var/snap/microk8s/current/certs/
