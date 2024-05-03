@@ -1,4 +1,4 @@
-git checkout -b kuber-11
+git checkout -b cloudnet-01
 git add *
-git commit -m "Home task kuber-11 v1"
-git push --set-upstream origin kuber-11
+git commit -m "Home task cloudnet-01 v1"
+git push --set-upstream origin cloudnet-01
