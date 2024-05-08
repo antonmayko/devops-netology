@@ -1,4 +1,4 @@
-git checkout -b cloudnet-01
+git checkout -b cloudnet-02
 git add *
-git commit -m "Home task cloudnet-01 v1"
-git push --set-upstream origin cloudnet-01
+git commit -m "Home task cloudnet-02 v1"
+git push --set-upstream origin cloudnet-02

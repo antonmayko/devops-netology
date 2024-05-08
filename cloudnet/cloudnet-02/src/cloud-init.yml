@@ -1,0 +1,21 @@
+#cloud-config
+package_update: true
+package_upgrade: false
+packages:
+ - nano
+
+write_files:
+- content: |
+    <!doctype html>
+    <html>
+    <head>
+    <title>Netology test page!!!</title>
+    </head>
+    <body>
+    <p>This is an example page</p>
+    <img src="https://netology-s3-bucket.website.yandexcloud.net/image1.png" alt="S3 image" width="600" height="500"> 
+    </body>
+    </html>
+  path: /var/www/html/index.html
+  permissions: '0644'
+  owner: apache:apache
