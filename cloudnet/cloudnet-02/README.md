@@ -61,10 +61,6 @@
 
 ![cloudnet](https://github.com/antonmayko/devops-netology/blob/cloudnet-02/cloudnet/cloudnet-02/assets/source.png)
 
-Исходный код страницы `index.html`:
-
-![cloudnet](https://github.com/antonmayko/devops-netology/blob/cloudnet-02/cloudnet/cloudnet-02/assets/source.png)
-
 Удаление двух ВМ:
 
 ![cloudnet](https://github.com/antonmayko/devops-netology/blob/cloudnet-02/cloudnet/cloudnet-02/assets/del-vm.png)
