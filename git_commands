@@ -1,4 +1,4 @@
-git checkout -b cloudnet-03
+git checkout -b diplom-01
 git add *
-git commit -m "Home task cloudnet-03 v1"
-git push --set-upstream origin cloudnet-03
+git commit -m "Diplom prep_v1"
+git push --set-upstream origin diplom-01
