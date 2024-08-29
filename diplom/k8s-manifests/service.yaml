@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-testapp
+spec:
+  type: NodePort
+  selector:
+    app: testapp
+  ports:
+    - name: nginx-service-port
+      protocol: TCP
+      port: 9001
+      targetPort: 80
+      nodePort: 30001
