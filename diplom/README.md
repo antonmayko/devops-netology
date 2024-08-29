@@ -53,7 +53,7 @@
 ### Подготовка cистемы мониторинга и деплой приложения
 
 Устанавливаем в кластер систему мониторинга [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus) 
-для отслеживания основных метрик Kubernetes. Его конфигурационные находятся [здесь](https://github.com/antonmayko/devops-netology/blob/diplom-01/diplom/kube-prometheus) 
+для отслеживания основных метрик Kubernetes. Его конфигурационные файлы находятся [здесь](https://github.com/antonmayko/devops-netology/blob/diplom-01/diplom/kube-prometheus) 
 
 Дашборды в grafana, отображающие состояние Kubernetes кластера:
 
