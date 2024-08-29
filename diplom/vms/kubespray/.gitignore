@@ -25,10 +25,10 @@ vagrant/
 plugins/mitogen
 
 # Ansible inventory
+!inventory/mycluster/hosts.yaml
 inventory/*
 !inventory/local
 !inventory/sample
-!inventory/mycluster/hosts.yaml
 inventory/*/artifacts/
 
 # Byte-compiled / optimized / DLL files
